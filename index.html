@@ -3,8 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
 </head>
 <body>
+
+<style>
+.filter-ui {
+  background:#fff;
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:100;
+  padding:10px;
+  border-radius:3px;
+  }
+</style>
+
+<nav id='filters' class='filter-ui'></nav>
+<div id="mapid"></div>
+<script>
+
+	var mymap = L.map('mapid', {layers: ["grayscale", "cities"]}).setView([22.903585,3.8709499], 3);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/light-v10',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+	for (var i = 0; i < points.length; i++) {
+        var pt = points[i];
+        var contentArea = pt[0];
+        var title = pt[1];
+        var location = pt[2];
+        var coordinates = pt[3];
+        var lat = coordinates.substring(0, coordinates.indexOf(','));
+        var long = coordinates.substring(coordinates.indexOf(','));
+        var time = pt[4];
+        var material = pt[5];
+        var image = pt[6];
+
+        var marker = L.marker(new L.LatLng(lat, lng), {
+            'icon': icons[status],
+            'title': title,
+            'language': lang,
+            'series': series,
+            'edition': edition,
+            'translator': translator,
+            'year': year,
+            'publisher': publisher,
+            'city': city
+        });
+
+        popupText = "<b>" + title + "</b><br><b>Language:</b> " + lang + "<br><b>Series/Collection:</b> " + series +  "<br><b>Edition:</b> " + edition + "<br><b>Translator:</b> " + translator + "<br><b>Date:</b> " + year + "<br><b>Publisher:</b> " + publisher + "<br><b>Location:</b> " + city + "<br><b>Page Count:</b> " + page;
+        if (link != "undefined") {
+            popupText += "<br><br> <a class='linkToText' target='_blank' href=" + link + "><strong>[ View Text ]</strong></a>";
+        }
+
+
+        if (pt[12]!== "_") {
+            var cover = "<img class='cover-img' src=covers/" + cover_address + " height='200vh'/>";
+            marker.bindPopup(popupText + "<br><br>" + cover, {className: 'stylePopup'});
+        }
+        else {
+            marker.bindPopup(popupText, {className: 'stylePopup'});
+        }
+        marker.closePopup();
+
+        if (lat != 0 && lng != 0) {
+            markers.addLayer(marker);
+        }
+
+    }
+</script>
+
 
 </body>
 </html>
