@@ -14,10 +14,10 @@
     <script src="points.js"></script>
 </head>
 <body>
+
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
-
 <div id="mapid">
 <script type="text/javascript">
     var blueIcon = L.icon({
@@ -38,7 +38,13 @@
     });
     var icons = [blueIcon, orangeIcon, redIcon, greenIcon];
 
-    var mymap = L.map('mapid').setView([22.903585,3.8709499], 3);
+    var area1 = new L.LayerGroup();
+    var area2 = new L.LayerGroup();
+
+    var mymap = L.map('mapid', {
+        zoom: 3,
+        layers: [area1, area2]
+    }).setView([22.903585,3.8709499], 3);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -80,8 +86,16 @@
             marker.bindPopup(popupText, {className: 'stylePopup'});
         }
         marker.closePopup();
-        marker.addTo(mymap);
+        var area = "area" + String(contentArea);
+        marker.addTo(window[area]);
    }
+
+    var overlayMaps = {
+        "Content Area 1": area1,
+        "Content Area 2": area2
+    };
+
+    L.control.layers(null, overlayMaps).addTo(mymap);
 </script>
 </div>
 
