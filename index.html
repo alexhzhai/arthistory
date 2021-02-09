@@ -62,18 +62,25 @@
            var cover_address = pt[7];
        }
 
-
-
-
-       var marker = L.marker(new L.LatLng(lat, long), {
+        var marker = L.marker(new L.LatLng(lat, long), {
            'icon': icons[contentArea-1],
            'title': title,
            'loc': place,
            'time': time,
            'material': material
-       });
+        });
 
-       marker.addTo(mymap);
+        popupText = "<b>" + title + "</b><br><b>Location:</b> " + place + "<br><b>Time Period:</b> " + time +  "<br><b>Material:</b> " + material;
+
+        if (pt[7] !== "-") {
+            var cover = "<img class='cover-img' src=images/" + cover_address + " height='150vh'/>";
+            marker.bindPopup(popupText + "<br><br>" + cover, {className: 'stylePopup'});
+        }
+        else {
+            marker.bindPopup(popupText, {className: 'stylePopup'});
+        }
+        marker.closePopup();
+        marker.addTo(mymap);
    }
 </script>
 </div>
