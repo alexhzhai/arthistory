@@ -20,31 +20,63 @@
             crossorigin=""></script>
 <div id="mapid">
 <script type="text/javascript">
-    var blueIcon = L.icon({
-        iconUrl: 'images/dots/blue-dot.svg',
+    var icon1 = L.icon({
+        iconUrl: 'images/dots/dot1.svg',
         iconSize: [15, 15],
     });
-    var orangeIcon = L.icon({
-        iconUrl: 'images/dots/orange-dot.svg',
+    var icon2 = L.icon({
+        iconUrl: 'images/dots/dot2.svg',
         iconSize: [15, 15],
     });
-    var redIcon = L.icon({
-        iconUrl: 'images/dots/red-dot.svg',
+    var icon3 = L.icon({
+        iconUrl: 'images/dots/dot3.svg',
         iconSize: [15, 15],
     });
-    var greenIcon = L.icon({
-        iconUrl: 'images/dots/green-dot.svg',
+    var icon4 = L.icon({
+        iconUrl: 'images/dots/dot4.svg',
         iconSize: [15, 15],
     });
-    var icons = [blueIcon, orangeIcon, redIcon, greenIcon];
+    var icon5 = L.icon({
+        iconUrl: 'images/dots/dot5.svg',
+        iconSize: [15, 15],
+    });
+    var icon6 = L.icon({
+        iconUrl: 'images/dots/dot6.svg',
+        iconSize: [15, 15],
+    });
+    var icon7 = L.icon({
+        iconUrl: 'images/dots/dot7.svg',
+        iconSize: [15, 15],
+    });
+    var icon8 = L.icon({
+        iconUrl: 'images/dots/dot8.svg',
+        iconSize: [15, 15],
+    });
+    var icon9 = L.icon({
+        iconUrl: 'images/dots/dot9.svg',
+        iconSize: [15, 15],
+    });
+    var icon10 = L.icon({
+        iconUrl: 'images/dots/dot10.svg',
+        iconSize: [15, 15],
+    });
+    var icons = [icon1, icon2, icon3, icon4];
 
     var area1 = new L.LayerGroup();
     var area2 = new L.LayerGroup();
+    var area3 = new L.LayerGroup();
+    var area4 = new L.LayerGroup();
+    var area5 = new L.LayerGroup();
+    var area6 = new L.LayerGroup();
+    var area7 = new L.LayerGroup();
+    var area8 = new L.LayerGroup();
+    var area9 = new L.LayerGroup();
+    var area10 = new L.LayerGroup();
 
     var mymap = L.map('mapid', {
         zoom: 3,
-        layers: [area1, area2]
-    }).setView([22.903585,3.8709499], 3);
+        layers: [area1, area2, area3, area4, area5, area6, area7, area8, area9, area10]
+    }).setView([22.903585,3.8709499], 2);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -59,13 +91,14 @@
        var pt = points[i];
        var contentArea = pt[0];
        var title = pt[1];
-       var place = pt[2];
-       var lat = pt[3];
-       var long = pt[4];
-       var time = pt[5];
-       var material = pt[6];
-       if (pt[7]!== "-") {
-           var cover_address = pt[7];
+       var artist = pt[2];
+       var place = pt[3];
+       var lat = pt[4];
+       var long = pt[5];
+       var time = pt[6];
+       var material = pt[7];
+       if (pt[8]!== "-") {
+           var cover_address = pt[8];
        }
 
         var marker = L.marker(new L.LatLng(lat, long), {
@@ -78,7 +111,7 @@
 
         popupText = "<b>" + title + "</b><br><b>Location:</b> " + place + "<br><b>Time Period:</b> " + time +  "<br><b>Material:</b> " + material;
 
-        if (pt[7] !== "-") {
+        if (pt[8] !== "-") {
             var cover = "<img class='cover-img' src=images/" + cover_address + " height='150vh'/>";
             marker.bindPopup(popupText + "<br><br>" + cover, {className: 'stylePopup'});
         }
@@ -91,8 +124,16 @@
    }
 
     var overlayMaps = {
-        "Content Area 1": area1,
-        "Content Area 2": area2
+        "Content Area 1: Global Prehistory 30,000–500 B.C.E.": area1,
+        "Content Area 2: Ancient Mediterranean 3500 B.C.E.–300 C.E.": area2,
+        "Content Area 3: Early Europe and Colonial Americas 200-1750 C.E.": area3,
+        "Content Area 4: Later Europe and Americas 1740-1980 C.E.": area4,
+        "Content Area 5: Indigenous Americas 1000 B.C.E. - 1980 C.E.": area5,
+        "Content Area 6: Africa, 1100–1980 C.E.": area6,
+        "Content Area 7: West and Central Asia 500 B.C.E.–1980 C.E.": area7,
+        "Content Area 8: South, East, and Southeast Asia 300 B.C.E.–1980 C.E.": area8,
+        "Content Area 9: The Pacific 700-1980 C.E.": area9,
+        "Content Area 10: Global Contemporary 1980 C.E. to Present": area10
     };
 
     L.control.layers(null, overlayMaps).addTo(mymap);
