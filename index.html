@@ -100,6 +100,7 @@
        if (pt[8]!== "-") {
            var cover_address = pt[8];
        }
+       var link = pt[9]
 
         var marker = L.marker(new L.LatLng(lat, long), {
            'icon': icons[contentArea-1],
@@ -112,7 +113,7 @@
         popupText = "<b>" + title + "</b><br><b>Artist:</b> " + artist + "</b><br><b>Location:</b> " + place + "<br><b>Time Period:</b> " + time +  "<br><b>Material:</b> " + material;
 
         if (pt[8] !== "-") {
-            var cover = "<img class='cover-img' src=images/" + contentArea + "/" + cover_address + " height='150vh'/>";
+            var cover = "<a href='" + link + "' target='_blank'><img class='cover-img' src=images/" + contentArea + "/" + cover_address + " height='150vh'/></a>";
             marker.bindPopup(popupText + "<br><br>" + cover, {className: 'stylePopup'});
         }
         else {
