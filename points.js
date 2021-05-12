@@ -37,7 +37,17 @@ var points = [
 [2,"34. Doryphoros (Spear Bearer)","Polykleitos","Greece",38.8477407,22.3847672,"Original 450-440 BCE","Roman copy (marble) of Greek original (bronze)","dory.jpg","https://library.artstor.org/#/asset/AIC_970018;prevRouteTS=1620708174751"],
 [2,"35. Acropolis","Iktinos and KalliKrates","Athens, Greece",37.9747895,23.7200334,"c. 447-410 BCE","Marble","athens.jpeg","https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg"],
 [2,"36. Grave stele of Hegeso","Attributed to Kallimachos","Greece",38.8477407,22.3847672,"c. 410 BCE","Marble and paint","hegeso.jpg","https://library.artstor.org/#/asset/AIC_680029;prevRouteTS=1620708304358"],
-[2,"37. Winged Victory of Samothrace",,"Greece",38.8477407,22.3847672,"Hellenistic Greece, c. 190 BCE","Marble","samothrace.jpg","https://library.artstor.org/#/asset/AWSS35953_35953_34203655;prevRouteTS=1620708397861"]
+[2,"37. Winged Victory of Samothrace",,"Greece",38.8477407,22.3847672,"Hellenistic Greece, c. 190 BCE","Marble","samothrace.jpg","https://library.artstor.org/#/asset/AWSS35953_35953_34203655;prevRouteTS=1620708397861"],
+[2,"38. Great Altar of Zeus and Athena at Pergamon",,"Asia Minor (present day Turkey)",38.9675561,35.2259639,"Hellenistic Greek c. 175 BCE","Marble (architecture and sculpture)","zeus.jpeg",""],
+[2,"39. House of the Vettii",,"Pompeii, Italy",40.7469393,14.4632536,"Imperial Roman c. second century BCE; rebuilt c 62-79 CE","Cut stone and fresco","vet.jpg","https://library.artstor.org/#/asset/external/8jNPYyMnKDE9IzI9dyZ8WRcoXHsrf1h%2BdCgx?source=ppt"],
+[2,"40. Alexander Mosaic from the House of Faun",,"Pompeii, Italy",40.7469393,14.4632536,"Republican Roman C. 100 BCE","Mosaic","mosaic.jpg","https://library.artstor.org/#/asset/LESSING_ART_1039490327;prevRouteTS=1620850254049"],
+[2,"41. Seated boxer",,"Rome, Italy",41.8905084,12.4902419,"Hellenistic Greek C. 100 BCE","Bronze","boxer.jpg","https://library.artstor.org/#/asset/SCALA_ARCHIVES_1039779350;prevRouteTS=1620850333725"],
+[2,"42. Head of a Roman patrician",,"Rome, Italy",41.8905084,12.4902419,"Republican Roman c. 75-50 BCE","Marble","bust.jpg","https://library.artstor.org/#/asset/external/8CdEdFUgJjg1QEI8dzF8KBQuX30veFR1?source=ppt"],
+[2,"43. Augustus of Prima Porta",,"Rome, Italy",41.8905084,12.4902419,"Imperial Roman. Early first century CE","Marble","augustus.jpg","https://library.artstor.org/#/asset/CANYONLIGHTS_DB_10311363439;prevRouteTS=1620850647209"],
+[2,"44. Colosseum (Flavian Amphitheatre)",,"Rome, Italy",41.8905084,12.4902419,"Imperial Roman 70-80 CE","Stone and concrete","colosseum.jpg","https://library.artstor.org/#/asset/SCALA_ARCHIVES_10310475031;prevRouteTS=1620850724078"],
+[2,"45. Forum of Trajan","Apollodorus of Damascus","Rome, Italy",41.8905084,12.4902419,"Forum and markets: 106-112 CE; Column completed 113 CE.","Brick and concrete (architecture); marble (column)","trajan.jpg","https://library.artstor.org/#/asset/SCALA_ARCHIVES_10310840696;prevRouteTS=1620850816186"],
+[2,"46. Pantheon",,"Rome, Italy",41.8905084,12.4902419,"Imperial Roman. 118-125 CE","Concrete with stone facing","pantheon.jpg","https://library.artstor.org/#/asset/SCALA_ARCHIVES_10310840699;prevRouteTS=1620850900319"],
+[2,"47. Ludovisi Battle Sarcophagus",,"Vigna Bernusconi, a tomb near the Porta Tiburtina",41.8975066,12.5081023,"Late Imperial Roman c. 250 CE","Marble","ludo.jpg","https://library.artstor.org/#/asset/SCALA_ARCHIVES_10310840672;prevRouteTS=1620850996963"]
 
 
 ]
